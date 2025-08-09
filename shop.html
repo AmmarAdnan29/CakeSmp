@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cake SMP Shop — Hearts</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <style>
+    :root {
+      --primary: #a64dff;
+      --text-dark: #222;
+      --text-mid: #444;
+      --white: #fff;
+      --bg-overlay: rgba(255,255,255,0.95);
+      --card-bg: #faf5ff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: var(--text-dark);
+      min-height: 100vh;
+      padding-bottom: 40px;
+    }
+
+    header {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:12px 28px;
+      background: #f8f8f8;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img.avatar {
+      height: 65px;
+      width: 65px;
+      border-radius: 6px;
+      margin-right: 10px;
+    }
+
+    .logo img.brand {
+      height: 27px;
+    }
+
+    nav a {
+      color: var(--text-dark);
+      margin-left:18px;
+      text-decoration:none;
+      font-weight:600;
+    }
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .container { max-width:1200px; margin:28px auto; padding:0 20px; }
+
+    .shop-header {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:20px;
+    }
+    .shop-title h2 {
+      color:var(--primary);
+      font-size:1.6rem;
+    }
+    .shop-sub {
+      color: var(--text-mid);
+      font-size:0.95rem;
+    }
+
+    .categories { display:flex; gap:10px; margin:14px 0 20px; }
+    .cat {
+      padding:8px 14px;
+      background: #f0f0f0;
+      border-radius:999px;
+      cursor:pointer;
+      color:var(--text-dark);
+      font-weight:600;
+    }
+    .cat.active {
+      background: linear-gradient(90deg,var(--primary), #7b3bff);
+      color: var(--white);
+      box-shadow: 0 6px 18px rgba(166,77,255,0.24);
+    }
+
+    .grid { display:grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap:16px; }
+    .card {
+      background: var(--card-bg);
+      border-radius:12px;
+      padding:14px;
+      overflow:hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .card img.item { width:100%; height:140px; object-fit:cover; border-radius:8px; background:#ddd; }
+    .card h3 { color:var(--text-dark); font-size:1.05rem; margin:4px 0; }
+    .price { display:flex; align-items:center; gap:6px; font-weight:700; color:var(--primary); }
+    .price img { width:18px; height:18px; }
+
+    .card-buttons { margin-top:auto; display:flex; gap:8px; }
+    .btn {
+      padding:9px 12px;
+      border-radius:8px;
+      border:none;
+      cursor:pointer;
+      font-weight:700;
+    }
+    .btn.add { background: linear-gradient(90deg,var(--primary), #7b3bff); color:var(--white); }
+    .btn.remove { background: #f0f0f0; color:var(--text-dark); }
+
+    .cart {
+      background: #f8f8f8;
+      padding:14px;
+      border-radius:12px;
+      color:var(--text-dark);
+      min-width:240px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+    .cart h4 { margin-bottom:8px; }
+    .cart-list { display:flex; flex-direction:column; gap:8px; max-height:260px; overflow:auto; margin-bottom:12px; }
+    .cart-item { display:flex; justify-content:space-between; gap:8px; align-items:center; }
+    .cart-total { display:flex; justify-content:space-between; font-weight:800; margin-top:6px; color:var(--primary); }
+    .checkout {
+      margin-top:10px;
+      padding:10px 12px;
+      border-radius:8px;
+      background:var(--primary);
+      color:var(--white);
+      width:100%;
+      border:none;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    @media (max-width: 900px) {
+      .shop-header { flex-direction:column; align-items:flex-start; gap:10px; }
+      .cart { margin-top:14px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="home.html">
+        <img class="avatar" src="smplogo.png" alt="Minecraft Avatar">
+      </a>
+      <a href="home.html">
+        <img class="brand" src="logotext.png" alt="Ray's Nation Logo">
+      </a>
+    </div>
+    <nav class="nav">
+      <a href="home.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="seasons.html">Seasons</a>
+      <a href="info.html">Info</a>
+      <a href="https://discord.gg/cgAmqUm6UN" target="_blank">Discord</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="shop-header">
+      <div>
+        <div class="shop-title">
+          <h2>Shop</h2>
+        </div>
+        <div class="shop-sub">
+          Spend Hearts to buy cosmetics, kit tokens, and more. 1 Heart =
+          <img src="heart.png" alt="heart" style="width:18px;vertical-align:middle;margin-left:6px;"> 
+        </div>
+
+        <div class="categories" id="categories">
+          <div class="cat" data-cat="cosmetics">Recipes</div>
+          <div class="cat" data-cat="kits">Kits</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:12px; align-items:center;">
+        <div class="cart" id="cart">
+          <h4>Your Cart</h4>
+          <div class="cart-list" id="cart-list">
+            <div style="opacity:.8">No items yet</div>
+          </div>
+          <div class="cart-total">
+            <span>Total Hearts</span>
+            <span id="cart-total">0</span>
+          </div>
+          <button class="checkout" id="checkout">Checkout</button>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="grid" id="items-grid">
+        <!-- Hearts category items -->
+        
+
+        
+        <!-- Recipes category items -->
+        <div class="card" data-category="cosmetics" data-price="0">
+        <img class="item" src="recipe1.png" alt="Heart Recipe" />
+        <h3>Heart Recipe</h3>
+     <div class="price"><img src="heart.png" alt="heart"> 0</div>
+     </div>
+
+
+  </main>
+
+  <script>
+    const cart = {};
+    const cartList = document.getElementById('cart-list');
+    const cartTotalEl = document.getElementById('cart-total');
+    const itemsGrid = document.getElementById('items-grid');
+
+    function renderCart() {
+      cartList.innerHTML = '';
+      const keys = Object.keys(cart);
+      if (!keys.length) {
+        cartList.innerHTML = '<div style="opacity:.8">No items yet</div>';
+        cartTotalEl.textContent = '0';
+        return;
+      }
+      let total = 0;
+      keys.forEach(id => {
+        const item = cart[id];
+        const el = document.createElement('div');
+        el.className = 'cart-item';
+        el.innerHTML = `<div>${item.name} x${item.qty}</div><div><img src="heart.png" style="width:16px;height:16px;vertical-align:middle"> ${item.qty * item.price}</div>`;
+        cartList.appendChild(el);
+        total += item.qty * item.price;
+      });
+      cartTotalEl.textContent = total;
+    }
+
+    itemsGrid.addEventListener('click', e => {
+      const addBtn = e.target.closest('.btn.add');
+      const remBtn = e.target.closest('.btn.remove');
+      if (addBtn) {
+        const card = addBtn.closest('.card');
+        const id = addBtn.dataset.id;
+        const price = parseInt(card.dataset.price || '0', 10);
+        const name = card.querySelector('h3').textContent;
+        if (!cart[id]) cart[id] = { id, name, price, qty: 0};
+        cart[id].qty += 1;
+        renderCart();
+        return;
+      }
+      if (remBtn) {
+        const id = remBtn.dataset.id;
+        if (!cart[id]) return;
+        cart[id].qty = Math.max(0, cart[id].qty - 1);
+        if (cart[id].qty === 0) delete cart[id];
+        renderCart();
+      }
+    });
+
+    document.getElementById('categories').addEventListener('click', e => {
+      const cat = e.target.closest('.cat');
+      if (!cat) return;
+      document.querySelectorAll('.cat').forEach(c => c.classList.remove('active'));
+      cat.classList.add('active');
+      const name = cat.dataset.cat;
+      document.querySelectorAll('.card').forEach(card => {
+        if (name === 'all' || card.dataset.category === name) card.style.display = '';
+        else card.style.display = 'none';
+      });
+    });
+
+    document.getElementById('checkout').addEventListener('click', () => {
+      const keys = Object.keys(cart);
+      if (!keys.length) { alert('Your cart is empty.'); return; }
+      const total = keys.reduce((s,k) => s + cart[k].qty * cart[k].price, 0);
+      alert(`Purchase complete!\nTotal Hearts spent: ${total}\n(Implement server-side redemption to grant items.)`);
+      for (const k of keys) delete cart[k];
+      renderCart();
+    });
+
+    renderCart();
+  </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seasons - Zerobrine SMP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="smpicon.png" type="image/png">
+  <style>
+    :root {
+      --primary: #00bfff;
+      --text-dark: #222;
+      --text-mid: #444;
+      --white: #ffffff;
+      --bg-overlay: rgba(255, 255, 255, 0.95);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8f9fa;
+      color: var(--text-dark);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 30px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      min-height: 65px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img.avatar {
+      height: 65px;
+      width: 65px;
+      border-radius: 6px;
+      margin-right: 10px;
+    }
+
+    .logo img.brand {
+      height: 27px;
+    }
+
+    .nav a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav a:hover {
+      color: var(--primary);
+    }
+
+    .season-wrapper {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .season-wrapper h1 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      color: var(--primary);
+      text-align: center;
+    }
+
+    .season-card {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .season-card h2 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: var(--text-dark);
+    }
+
+    .season-card p {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    .current {
+      border-left: 6px solid var(--primary);
+      background-color: #e6f7ff;
+    }
+
+    .badge {
+      background-color: var(--primary);
+      color: white;
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 30px;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="home.html">
+        <img class="avatar" src="smplogo.png" alt="Minecraft Avatar">
+      </a>
+      <a href="home.html">
+        <img class="brand" src="logotext.png" alt="Ray's Nation Logo">
+      </a>
+    </div>
+    <nav class="nav">
+      <a href="home.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="seasons.html">Seasons</a>
+      <a href="info.html">Info</a>
+      <a href="https://discord.gg/cgAmqUm6UN" target="_blank">Discord</a>
+    </nav>
+  </header>
+
+  <main class="season-wrapper">
+    <h1>Server Seasons</h1>
+
+     <div class="season-card current">
+      <h2>Season 1 <span class="badge">Current Season</span></h2>
+      <p>
+        Season 1 has officially begun! This season delivers the intense LifeSteal experience — every time you take down another player, you steal one of their hearts, growing stronger with each victory. But survival isn’t just about killing… you can also craft hearts using rare materials to restore your life, and even revive fallen players if you choose to bring them back into the fight. Form alliances, plan betrayals, and battle for dominance in a world where every heart counts. Lose them all, and you’re gone for good — unless someone decides you’re worth reviving.
+      </p>
+    </div>
+
+   
+    
+  </main>
+
+</body>
+</html>
